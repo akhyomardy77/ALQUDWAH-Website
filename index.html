@@ -235,6 +235,41 @@ body{
     opacity:.85;
 }
 
+/* ===== SUB NAVBAR (BARU) ===== */
+.sub-navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+.sub-menu{
+    display:flex;
+    gap:20px;
+}
+
+.sub-menu a{
+    text-decoration:none;
+    color:var(--dark);
+    font-weight:600;
+}
+
+.sub-menu a:hover{
+    color:var(--gold1);
+}
+
+#clock{
+    font-weight:bold;
+    font-size:14px;
+    color:var(--dark);
+}
+
 /* ===== SECTION ===== */
 .section{
     max-width:1000px;
@@ -380,6 +415,17 @@ body{
     <p>Tempat dimana setiap cerita mengalun bagai melodi.</p>
 </div>
 
+<!-- SUB NAVBAR BARU -->
+<div class="sub-navbar">
+    <div class="sub-menu">
+        <a href="#">Beranda</a>
+        <a href="#">Informasi</a>
+        <a href="#">Kegiatan</a>
+        <a href="#">Galeri</a>
+    </div>
+    <div id="clock"></div>
+</div>
+
 <!-- ABOUT -->
 <div class="market-card fade-up">
     <h3>Kenali kami melalui gebrakan baru kami!</h3>
@@ -454,6 +500,29 @@ function openLogin(){
 function closeLogin(){
     document.getElementById("popup").style.display = "none";
 }
+
+/* JAM */
+function updateClock(){
+    const now = new Date();
+
+    const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+    const bulan = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];
+
+    let h = hari[now.getDay()];
+    let tgl = now.getDate();
+    let b = bulan[now.getMonth()];
+    let th = now.getFullYear();
+
+    let jam = now.getHours().toString().padStart(2,'0');
+    let menit = now.getMinutes().toString().padStart(2,'0');
+    let detik = now.getSeconds().toString().padStart(2,'0');
+
+    document.getElementById("clock").innerHTML =
+        `${h}, ${tgl} ${b} ${th} | ${jam}:${menit}:${detik}`;
+}
+
+setInterval(updateClock,1000);
+updateClock();
 </script>
 
 </body>
