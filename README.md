@@ -1,16 +1,3 @@
-.welcome{
-    min-height:420px;
-    background:linear-gradient(135deg,var(--gold2),var(--soft));
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px 20px;
-}
-
-<div class="welcome fade-up">
-
 # <p align="center">🌟 ALQUDWAH Official Website 🌟</p>
 
 <p align="center">
