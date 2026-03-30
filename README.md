@@ -1,3 +1,5 @@
+<div class="welcome fade-up">
+
 # <p align="center">🌟 ALQUDWAH Official Website 🌟</p>
 
 <p align="center">
